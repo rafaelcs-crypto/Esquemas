@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esquema Juicio Cambiario</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1e40af', // Color principal para pasos
+                        'success-green': '#10b981', // Color para éxito/archivo
+                        'danger-red': '#ef4444', // Color para ejecución/sobreseimiento
+                        'decision-yellow': '#f59e0b', // Color para decisiones
+                        'flow-gray': '#a1a1aa', //
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], //
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilo para simular una flecha simple entre pasos en móvil */
+        .flow-arrow {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 15px solid #a1a1aa; /* Color gris de la flecha */
+            margin: 1rem auto;
+            display: block;
+        }
+        /* Clase para destacar textos importantes y plazos */
+        .highlight {
+            font-weight: 700; /* Bold */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 p-4 font-sans antialiased">
+
+
+
+
+    <div class="max-w-md mx-auto">
+        <header class="text-center mb-6">    
+            <h1 class="text-2xl font-bold text-primary-blue">ESQUEMA DEL JUICIO CAMBIARIO</h1>
+        </header>
+
+
+
+
+        <div class="bg-primary-blue text-white p-4 rounded-xl shadow-lg mb-4">
+            <h2 class="font-bold text-lg mb-1">JURISDICCIÓN Y COMPETENCIA</h2>
+            <p class="text-sm">Juzgado de <span class="highlight">1ª Instancia del domicilio del demandado</span>.</p>
+            <p class="text-xs mt-2"><span class="highlight">No serán aplicables las normas sobre sumisión expresa o tácita</span>.</p>
+        </div>
+
+
+
+
+        <div class="flow-arrow"></div>
+
+
+
+
+        <div class="bg-success-green text-white p-4 rounded-xl shadow-lg mb-4">
+            <h2 class="font-bold text-lg mb-1">INICIO (Demanda)</h2>
+            <p class="text-sm">Comienzo por <span class="highlight">demanda sucinta</span> a la que se acompañará el <span class="highlight">título cambiario</span>.</p>
+        </div>
+
+
+
+
+        <div class="flow-arrow"></div>
+
+
+
+
+        <div class="bg-decision-yellow p-4 rounded-xl shadow-lg mb-4 text-gray-800">
+            <h2 class="font-bold text-lg mb-1">ANÁLISIS DE CORRECCIÓN FORMAL Y EMBARGO</h2>
+            <p class="text-sm">Análisis por <span class="highlight">auto</span>, de corrección formal del título cambiario, si conforme:</p>
+            
+            <hr class="my-2 border-yellow-300">
+
+
+            <p class="font-bold text-sm mt-1">Medida cautelar (<span class="highlight text-danger-red">INMEDIATA</span>)</p> 
+            <ul class="list-disc ml-4 text-xs">
+                <li><span class="highlight text-danger-red">Inmediato</span> <span class="highlight">embargo preventivo</span> de los bienes del deudor por la cantidad del título ejecutivo, más intereses de demora, gastos y costas.</li> 
+            </ul>
+        </div>
+        
+        <div class="flow-arrow"></div>
+
+
+
+
+        <div class="bg-primary-blue text-white p-4 rounded-xl shadow-lg mb-4">
+            <h2 class="font-bold text-lg mb-1">REQUERIMIENTO DE PAGO Y OPCIONES (LAJ)</h2>
+            
+            <p class="font-bold text-sm mb-1">Requerimiento de pago</p>
+            <p class="text-xs">Al deudor: <span class="highlight text-danger-red">10 días</span>. (Contra el auto que deniegue la adopción de las medidas → recurso potestativo de Reposición y recurso de Apelación por el acreedor).</p>
+        </div>
+
+
+
+
+        <div class="flow-arrow"></div>
+
+
+
+
+        <div class="flex justify-between items-center text-gray-500 font-semibold my-2 text-xs">
+            <span>↓ a) Pago</span>
+            <span>↓ b) Niega Firma</span>
+            <span>↓ c) No Opone</span>
+            <span>↓ d) Opone</span>
+        </div>
+
+
+
+
+        <div class="grid grid-cols-1 gap-4">
+            <div class="bg-white p-4 rounded-xl shadow-lg border-2 border-success-green">
+                <h3 class="font-bold text-lg text-success-green mb-1">a) ATIENDE EL REQUERIMIENTO (PAGO)</h3>
+                <p class="text-sm">Se procederá como dispone el artículo 583, pero las <span class="highlight">costas serán de cargo del deudor</span>.</p>
+            </div>
+
+
+
+
+            <div class="bg-white p-4 rounded-xl shadow-lg border-2 border-danger-red">
+                <h3 class="font-bold text-lg text-danger-red mb-1">b) NIEGA AUTENTICIDAD DE FIRMA</h3>
+                <p class="text-sm">Dentro de los <span class="highlight text-danger-red">5 días</span> siguientes: podrá el tribunal, <span class="highlight">alzar los embargos</span>, exigiendo, si lo considera conveniente, la caución o garantía adecuada.</p>
+            </div>
+
+
+
+
+            <div class="bg-white p-4 rounded-xl shadow-lg border-2 border-danger-red">
+                <h3 class="font-bold text-lg text-danger-red mb-1">c) NO DEMANDA OPOSICIÓN</h3>
+                <p class="text-sm">El Tribunal despachará <span class="highlight">ejecución</span> y tras ello el LAJ <span class="highlight">trabará embargo</span> si no se hubiera podido practicar o hubiese sido alzado.</p>
+            </div>
+
+
+
+
+            <div class="bg-white p-4 rounded-xl shadow-lg border-2 border-primary-blue">
+                <h3 class="font-bold text-lg text-primary-blue mb-1">d) DEMANDA DE OPOSICIÓN</h3>
+                <p class="text-sm">LAJ traslado al acreedor para <span class="highlight">impugnación por escrito en <span class="highlight text-danger-red">10 días</span></span>.</p>
+                <p class="text-xs mt-1">→ Las partes, podrán solicitar <span class="highlight">vista</span>, por los trámites del <span class="highlight">juicio verbal</span>.</p>
+                <p class="text-xs mt-1">→ <span class="highlight">Sentencia</span>, <span class="highlight text-danger-red">10 días</span> (<span class="highlight">efectos de cosa juzgada</span>): Desestimación y recurso → <span class="highlight">provisionalmente ejecutable</span>.</p>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>
